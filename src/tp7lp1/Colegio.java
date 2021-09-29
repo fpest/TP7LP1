@@ -4,7 +4,7 @@ public class Colegio {
 
     public static void main(String[] args) {
 
-        Materia m1 = new Materia(1, "Ingles", 1);
+        Materia m1 = new Materia(1, "Ingles 1", 1);
         Materia m2 = new Materia(2, "Matematicas", 1);
         Materia m3 = new Materia(3, "Laboratorio 1", 1);
         

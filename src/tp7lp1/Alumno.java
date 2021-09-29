@@ -20,9 +20,7 @@ public class Alumno {
 
         agregarAListaAlumnos(this);
     }
-    
-            
-    
+ 
     public void agregarAListaAlumnos(Alumno alumno){
             if (MenuPrincipal.getListaAlumnos().add(alumno)){
             JOptionPane.showMessageDialog(null, "El Alumno se agregó correctamente.");
@@ -30,9 +28,6 @@ public class Alumno {
             JOptionPane.showMessageDialog(null, "El Legajo del Alumno ya está registrado. No se pudo Agregar.");
             };
             };
-    
-    
-    
     
     public int getLegajo() {
         return legajo;
@@ -59,7 +54,17 @@ public class Alumno {
     }
 
     public void agregarMateria(Materia materia) {
-        materias.add(materia);
+        if (cantidadMaterias()<3){
+            if(materias.add(materia)){
+                    JOptionPane.showMessageDialog(null, "El Alumno se inscribió correctamente en la Materia.");
+            }else{
+                    JOptionPane.showMessageDialog(null, "El Alumno ya estaba inscripto en esta Materia. No se puede volver a Inscribir.");
+            }
+        }else{
+                JOptionPane.showMessageDialog(null, "El Alumno está inscripto en 3 materias. No se pudo Inscribir.");
+        };
+        
+        
     }
 
     public int cantidadMaterias() {

@@ -52,10 +52,20 @@ public class frm_FormularioDeMaterias extends javax.swing.JInternalFrame {
         jLabel7.setText("Año al que Pertenece:");
 
         jTxtIDMateria.setEnabled(false);
+        jTxtIDMateria.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTxtIDMateriaFocusLost(evt);
+            }
+        });
 
         jTxtNombreMateria.setEnabled(false);
 
         jTxtAnio.setEnabled(false);
+        jTxtAnio.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTxtAnioFocusLost(evt);
+            }
+        });
 
         jBtnSalir.setText("Salir");
         jBtnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -188,6 +198,28 @@ public class frm_FormularioDeMaterias extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jBtnGuardarActionPerformed
 
+    private void jTxtIDMateriaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTxtIDMateriaFocusLost
+            try {
+            int modelo = Integer.parseInt(jTxtIDMateria.getText());
+        }catch (NumberFormatException nf) {
+            JOptionPane.showMessageDialog(null, "Debe ingresar sólo números en el campo del Código de la Materia.");
+            jTxtIDMateria.setText("");
+            jTxtIDMateria.requestFocus();
+        };
+
+
+    }//GEN-LAST:event_jTxtIDMateriaFocusLost
+
+    private void jTxtAnioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTxtAnioFocusLost
+try {
+            int modelo = Integer.parseInt(jTxtAnio.getText());
+        }catch (NumberFormatException nf) {
+            JOptionPane.showMessageDialog(null, "Debe ingresar sólo números en el campo del Año.");
+            jTxtAnio.setText("");
+            jTxtAnio.requestFocus();
+
+    }//GEN-LAST:event_jTxtAnioFocusLost
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnGuardar;

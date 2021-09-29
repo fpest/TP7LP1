@@ -71,6 +71,11 @@ public class frm_FormularioDeInscripcion extends javax.swing.JInternalFrame {
         });
 
         jBtnInscribir.setText("Inscribir");
+        jBtnInscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnInscribirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,6 +128,13 @@ public class frm_FormularioDeInscripcion extends javax.swing.JInternalFrame {
     private void jBtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalirActionPerformed
         dispose();
     }//GEN-LAST:event_jBtnSalirActionPerformed
+
+    private void jBtnInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnInscribirActionPerformed
+        
+        Alumno alumno = (Alumno) jCbAlumno.getSelectedItem();
+        alumno.agregarMateria((Materia) jCbMateria.getSelectedItem());
+
+    }//GEN-LAST:event_jBtnInscribirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
